@@ -13,15 +13,22 @@
                 python: ["City Statistics","Python, Django, SQL", "Users can search cities by name for weather and air quality data, save multiple cities to the database, and then visualize that data on a plotly graph."],
                 mern: ["Plant Manager", "Mongo, Express, Node, React", "Users can collect data on plants and save their results.  They can also manage water schedules and visualize plant data for comparison."],
                 csharp: ["Cookbook", "C#, ASP.Net, SQL","Users can create, save, edit, delete and email recipes across a board shared with other users.  Each recipe also has a discussion board for users to communicate."],
-                coldfusion: ["Exam Schedule", "Coldfusion, Lucee, Tomcat, SQL", "Users can schedule the appropriate exams, available at particular testing centers.  Admins can add/delete exams and testingcenters."]
+                coldfusion: ["Exam Scheduler", "Coldfusion, Lucee, Tomcat, SQL", "Users can schedule the appropriate exams, available at particular testing centers.  Admins can add/delete exams and testingcenters."]
             }
 
             $( ".pop" ).mouseenter(function() {
-                    
-                    $(".popwindow").toggle()
+                var project = $(this).children("img").prevObject[0].alt
+                $(".popwindow").append("<div class=\"tempdesc\"><h3>Application Name:  "+
+                    descriptions[project][0]+"</h3><h3>Technologies Used:     "+
+                    descriptions[project][1]+
+                    "</h3><p>"+
+                    descriptions[project][2]+
+                    "</p></div>")
+                $(".popwindow").toggle()
                 }).mouseleave(function ()
                 {
                     $(".popwindow").toggle()
+                    $( ".tempdesc" ).remove();
             });
             
         })
@@ -30,12 +37,15 @@
         .popwindow{
             display              : none;
             position             : absolute;
+            top                  : 420px;
             padding              : 10px;
             background           : #3AB9AE;
             border               : 1px solid #A2ADBC;
             border-radius        : 20px;
             margin               : 0px;
-            box-shadow           : 0px 0px 5px 0px rgba(164, 164, 164, 1);          
+            box-shadow           : 0px 0px 5px 0px rgba(164, 164, 164, 1);
+            width                : 710px;  
+            height               : 150px;        
         }
         .projects{
             display:flex; 
@@ -48,37 +58,49 @@
             padding: 5px; 
             background-color: white;
         }
+        img.pop:hover{
+            transform: scale(1.5);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
     </style>
     <title>Skyler Milliken</title>
 </head>
 <body>
-    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;background-color: lightblue; padding: 25px;" >
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;background-color: lightblue; padding: 10px;" >
         <h1 style="color: darkblue">Skyler Milliken</h1>
-        <h2 style="color: darkblue">Full Stack Developer | Web Developer | Software Engineer</h2>
+        <h3 style="color: darkblue">Full Stack Developer | Web Developer | Software Engineer</h3>
 
-            <hr>
-            <a href = "https://www.linkedin.com/in/skyler-milliken-49551674/"><i class="fab fa-linkedin fa-3x" style="color: darkblue"></i></a>
-            <a href = "https://github.com/relykstm"><i class="fab fa-github-square fa-3x" style="color: darkblue"></i></a>
-            <a href="mailto:relykstm@gmail.com"><i class="fas fa-envelope fa-3x" style="color: darkblue"></i></a>
-            <hr>
+            <div style = "display:flex; justify-content: center; align-items: center; flex-direction: row">
+                <a href = "https://www.linkedin.com/in/skyler-milliken-49551674/"><i class="fab fa-linkedin fa-3x" style="color: darkblue; margin: 5px;"></i></a>
+                <a href = "https://github.com/relykstm"><i class="fab fa-github-square fa-3x" style="color: darkblue; margin: 5px;"></i></a>
+                <a href="mailto:relykstm@gmail.com"><i class="fas fa-envelope fa-3x" style="color: darkblue; margin: 5px;"></i></a>
+            </div>
 
         <h1 style="color: darkblue">Recent Projects:</h1>
         <div style = "display:flex; justify-content: center; align-items: center; flex-direction: row">
             <!-- Python Django SQL -->
-            <a href= "https://youtu.be/kzm-cP9y_Zg" class= "projects"><img class = "pop" style = "width: 96%; height: auto;" src="http://img.youtube.com/vi/kzm-cP9y_Zg/0.jpg"/></a>
+            <a href= "https://youtu.be/kzm-cP9y_Zg" class= "projects"><img class = "pop" alt="python" style = "width: 96%; height: auto;" src="http://img.youtube.com/vi/kzm-cP9y_Zg/0.jpg"/></a>
             <!-- Javascript React Mongo -->
-            <a href= "https://youtu.be/rkZivRed6e0" class= "projects"><img class = "pop" style = "width: 96%; height: auto;" src="http://img.youtube.com/vi/rkZivRed6e0/0.jpg"/></a>
+            <a href= "https://youtu.be/rkZivRed6e0" class= "projects"><img class = "pop" alt= "mern" style = "width: 96%; height: auto;" src="http://img.youtube.com/vi/rkZivRed6e0/0.jpg"/></a>
             <!-- C# ASP.Net SQL-->
-            <a href = "https://youtu.be/bLgBCtAwI0g" class= "projects"><img class = "pop" style = "width: 96%; height: auto;" src="http://img.youtube.com/vi/bLgBCtAwI0g/0.jpg"/></a>
+            <a href = "https://youtu.be/bLgBCtAwI0g" class= "projects"><img class = "pop" alt= "csharp" style = "width: 96%; height: auto;" src="http://img.youtube.com/vi/bLgBCtAwI0g/0.jpg"/></a>
             <!-- Coldfusion Tomcat SQL -->
-            <a href="https://youtu.be/ePFtissfYiQ" class= "projects"><img class = "pop" style = "width: 96%; height: auto;" src="http://img.youtube.com/vi/ePFtissfYiQ/0.jpg"/></a>
+            <a href="https://youtu.be/ePFtissfYiQ" class= "projects"><img class = "pop" alt= "coldfusion" style = "width: 96%; height: auto;" src="http://img.youtube.com/vi/ePFtissfYiQ/0.jpg"/></a>
         </div>    
 
 
-        <div class="popwindow"><span>WASSSAAAAAAPPPPPPPPP</span></div>
+        <div class="popwindow"></div>
 
-
-
+        <div class="showaboutme" style="width: 700px; background-color: white; border: 5px solid darkblue; border-radius: 20px; padding: 10px;display: flex; flex-direction: column; justify-content: center; align-items: center; height: 140px;">
+            <h3 class="about">About me</h3>
+            <p>
+                I'm a software developer with a background in enterprise technology sales, who also enjoys running, 
+                fishing and bird hunting with my dog. I am a quick learner, tech enthusiast, 
+                and team player who values team work, communication, and result. I enjoy tackling challenging 
+                problems to grow myself to accomplish personal goals and help others along the way. 
+                I'm am currently working to broaden my web development skills to mobile(iOS)! 
+            </p>
+        </div>
 
         <!-- <div>
                 <h1>Opensource Contributions:</h1>

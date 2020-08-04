@@ -3,12 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Faustina:wght@500&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/9de0572606.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"
     integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
     <script>
         $(document).ready(function(){
+            // function autoResizeDiv()
+            // {
+            //     document.getElementsByClassName("wrapper").style.height = window.innerHeight +'px';
+            //     console.log(document.getElementsByClassName("wrapper"))
+            // }
+            // window.onresize = autoResizeDiv;
+            // autoResizeDiv();
             var descriptions = {
                 python: ["City Statistics","Python, Django, SQL", "Users can search cities by name for weather and air quality data, save multiple cities to the database, and then visualize that data on a plotly graph."],
                 mern: ["Plant Manager", "Mongo, Express, Node, React", "Users can collect data on plants and save their results.  They can also manage water schedules and visualize plant data for comparison."],
@@ -17,16 +25,24 @@
             }
 
             $( ".pop" ).mouseenter(function() {
+                var pop = $(this)[0].className
+                console.log(pop)
                 var project = $(this).children("img").prevObject[0].alt
-                $(".popwindow").append("<div class=\"tempdesc\"><h3>Application Name:  "+
+                $(".popwindow").append("<div class=\"tempdesc\"><h3>"+
                     descriptions[project][0]+"</h3><h3>Technologies Used:     "+
-                    descriptions[project][1]+
-                    "</h3><p>"+
-                    descriptions[project][2]+
-                    "</p></div>")
-                $(".popwindow").toggle()
+                        descriptions[project][1]+
+                        "</h3><p>"+
+                            descriptions[project][2]+
+                            "</p></div>")
+                            $(".popwindow").toggle()
+                            
+                            
+                $(".wrapper>*").not(".noblur, .popwindow").css({"filter": "blur(4px)"});
+
+
                 }).mouseleave(function ()
                 {
+                    $(".wrapper>*").not(".noblur").css({"filter": ""});
                     $(".popwindow").toggle()
                     $( ".tempdesc" ).remove();
             });
@@ -34,18 +50,32 @@
         })
     </script>
     <style>
+        *{
+            font-family: 'Faustina', serif;
+        }
+
+        .tempdesc{
+            display: contents;
+            /* display:flex;  */
+            /* justify-content: center; 
+            flex-direction: column;
+            align-items: center;  */
+        }
+
         .popwindow{
             display              : none;
+            /* align-self           : flex-end; */
             position             : absolute;
-            top                  : 420px;
+            top                  : 360px;
             padding              : 10px;
-            background           : #3AB9AE;
+            background           : lightyellow;
             border               : 1px solid #A2ADBC;
             border-radius        : 20px;
             margin               : 0px;
             box-shadow           : 0px 0px 5px 0px rgba(164, 164, 164, 1);
             width                : 710px;  
-            height               : 150px;        
+            height               : 150px;    
+            z-index:10; 
         }
         .projects{
             display:flex; 
@@ -66,18 +96,18 @@
     <title>Skyler Milliken</title>
 </head>
 <body>
-    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;background-color: lightblue; padding: 10px;" >
-        <h1 style="color: darkblue">Skyler Milliken</h1>
-        <h3 style="color: darkblue">Full Stack Developer | Web Developer | Software Engineer</h3>
+    <div class = "wrapper" style="height: auto; display: flex; flex-direction: column; justify-content: center; align-items: center; background-image: url('https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'); background-repeat: no-repeat;background-attachment: fixed; background-size: cover;padding: 10px;" >
+        <h1 style="color: white">Skyler Milliken</h1>
+        <!-- <h3 style="color: white">Full Stack Developer | Web Developer | Software Engineer</h3> -->
 
             <div style = "display:flex; justify-content: center; align-items: center; flex-direction: row">
-                <a href = "https://www.linkedin.com/in/skyler-milliken-49551674/"><i class="fab fa-linkedin fa-3x" style="color: darkblue; margin: 5px;"></i></a>
-                <a href = "https://github.com/relykstm"><i class="fab fa-github-square fa-3x" style="color: darkblue; margin: 5px;"></i></a>
-                <a href="mailto:relykstm@gmail.com"><i class="fas fa-envelope fa-3x" style="color: darkblue; margin: 5px;"></i></a>
+                <a href = "https://www.linkedin.com/in/skyler-milliken-49551674/"><i class="fab fa-linkedin fa-3x" style="color: white; margin: 5px;"></i></a>
+                <a href = "https://github.com/relykstm"><i class="fab fa-github-square fa-3x" style="color: white; margin: 5px;"></i></a>
+                <a href="mailto:relykstm@gmail.com"><i class="fas fa-envelope fa-3x" style="color: white; margin: 5px;"></i></a>
             </div>
 
-        <h1 style="color: darkblue">Recent Projects:</h1>
-        <div style = "display:flex; justify-content: center; align-items: center; flex-direction: row">
+        <h1 style="color: white">Recent Projects:</h1>
+        <div class = "noblur" style = "display:flex; justify-content: center; align-items: center; flex-direction: row">
             <!-- Python Django SQL -->
             <a href= "https://youtu.be/kzm-cP9y_Zg" class= "projects"><img class = "pop" alt="python" style = "width: 96%; height: auto;" src="http://img.youtube.com/vi/kzm-cP9y_Zg/0.jpg"/></a>
             <!-- Javascript React Mongo -->
@@ -86,17 +116,17 @@
             <a href = "https://youtu.be/bLgBCtAwI0g" class= "projects"><img class = "pop" alt= "csharp" style = "width: 96%; height: auto;" src="http://img.youtube.com/vi/bLgBCtAwI0g/0.jpg"/></a>
             <!-- Coldfusion Tomcat SQL -->
             <a href="https://youtu.be/ePFtissfYiQ" class= "projects"><img class = "pop" alt= "coldfusion" style = "width: 96%; height: auto;" src="http://img.youtube.com/vi/ePFtissfYiQ/0.jpg"/></a>
+            <div class="popwindow noblur"></div>
         </div>    
 
 
-        <div class="popwindow"></div>
 
-        <div class="showaboutme" style="width: 700px; background-color: white; border: 5px solid darkblue; border-radius: 20px; padding: 10px;display: flex; flex-direction: column; justify-content: center; align-items: center; height: 140px;">
-            <h3 class="about">About me</h3>
+        <div class="showaboutme" style="width: 700px; background-color: white; border: 5px solid white; border-radius: 20px; padding: 10px;display: flex; flex-direction: column; justify-content: center; align-items: center; height: 130px;">
+            <span>About me:</span>
             <p>
                 I'm a software developer with a background in enterprise technology sales, who also enjoys running, 
                 fishing and bird hunting with my dog. I am a quick learner, tech enthusiast, 
-                and team player who values team work, communication, and result. I enjoy tackling challenging 
+                and team player who values team work, communication, and results. I enjoy tackling challenging 
                 problems to grow myself to accomplish personal goals and help others along the way. 
                 I'm am currently working to broaden my web development skills to mobile(iOS)! 
             </p>

@@ -10,13 +10,13 @@
     crossorigin="anonymous"></script>
     <script>
         $(document).ready(function(){
-            // function autoResizeDiv()
-            // {
-            //     document.getElementsByClassName("wrapper").style.height = window.innerHeight +'px';
-            //     console.log(document.getElementsByClassName("wrapper"))
-            // }
-            // window.onresize = autoResizeDiv;
-            // autoResizeDiv();
+            function autoResizeDiv()
+            {
+                console.log(window.innerHeight +'px')
+                $(".wrapper").css("height", window.innerHeight +'px');
+            }
+            window.onresize = autoResizeDiv;
+            autoResizeDiv();
             var descriptions = {
                 python: ["City Statistics","Python, Django, SQL", "Users can search cities by name for weather and air quality data, save multiple cities to the database, and then visualize that data on a plotly graph."],
                 mern: ["Plant Manager", "Mongo, Express, Node, React", "Users can collect data on plants and save their results.  They can also manage water schedules and visualize plant data for comparison."],
@@ -84,7 +84,7 @@
             display              : none;
             /* align-self           : flex-end; */
             position             : absolute;
-            top                  : 360px;
+            top                  : 115px;
             padding              : 10px;
             background           : lightyellow;
             border               : 1px solid #A2ADBC;
@@ -114,7 +114,7 @@
     <title>Skyler Milliken</title>
 </head>
 <body>
-    <div class = "wrapper" style="height: auto; display: flex; flex-direction: column; justify-content: center; align-items: center; background-image: url('https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'); background-repeat: no-repeat;background-attachment: fixed; background-size: cover;padding: 10px;" >
+    <div class = "wrapper" style="display: flex; flex-direction: column; justify-content: center; align-items: center; background-image: url('https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'); background-repeat: no-repeat;background-attachment: fixed; background-size: cover;padding: 10px;" >
         <h1 style="color: white">Skyler Milliken</h1>
         <!-- <h3 style="color: white">Full Stack Developer | Web Developer | Software Engineer</h3> -->
 
@@ -124,8 +124,8 @@
                 <a href="mailto:relykstm@gmail.com"><i class="email fas fa-envelope fa-3x" style="color: white; margin: 5px;"></i></a>
             </div>
 
-        <h1 style="color: white">Recent Projects:</h1>
-        <div class = "noblur" style = "display:flex; justify-content: center; align-items: center; flex-direction: row">
+        <h1 class = "noblur" style="color: white">Recent Projects:</h1>
+        <div class = "noblur" style = "position: relative; display:flex; justify-content: center; align-items: center; flex-direction: row">
             <!-- Python Django SQL -->
             <a href= "https://youtu.be/kzm-cP9y_Zg" target="_blank" class= "projects"><img class = "pop" alt="python" style = "width: 96%; height: auto;" src="http://img.youtube.com/vi/kzm-cP9y_Zg/0.jpg"/></a>
             <!-- Javascript React Mongo -->

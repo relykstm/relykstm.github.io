@@ -46,6 +46,24 @@
                     $(".popwindow").toggle()
                     $( ".tempdesc" ).remove();
             });
+
+            $(".linkedin").mouseenter(function(){
+                $(".linkedin").css("color","darkblue")
+            }).mouseleave(function(){
+                $(".linkedin").css("color","white")
+            })
+
+            $(".github").mouseenter(function(){
+                $(".github").css("color","black")
+            }).mouseleave(function(){
+                $(".github").css("color","white")
+            })
+
+            $(".email").mouseenter(function(){
+                $(".email").css("color","red")
+            }).mouseleave(function(){
+                $(".email").css("color","white")
+            })
             
         })
     </script>
@@ -101,21 +119,21 @@
         <!-- <h3 style="color: white">Full Stack Developer | Web Developer | Software Engineer</h3> -->
 
             <div style = "display:flex; justify-content: center; align-items: center; flex-direction: row">
-                <a href = "https://www.linkedin.com/in/skyler-milliken-49551674/"><i class="fab fa-linkedin fa-3x" style="color: white; margin: 5px;"></i></a>
-                <a href = "https://github.com/relykstm"><i class="fab fa-github-square fa-3x" style="color: white; margin: 5px;"></i></a>
-                <a href="mailto:relykstm@gmail.com"><i class="fas fa-envelope fa-3x" style="color: white; margin: 5px;"></i></a>
+                <a href = "https://www.linkedin.com/in/skyler-milliken-49551674/"><i class="linkedin fab fa-linkedin fa-3x" style="color: white; margin: 5px;"></i></a>
+                <a href = "https://github.com/relykstm"><i class="github fab fa-github-square fa-3x" style="color: white; margin: 5px;"></i></a>
+                <a href="mailto:relykstm@gmail.com"><i class="email fas fa-envelope fa-3x" style="color: white; margin: 5px;"></i></a>
             </div>
 
         <h1 style="color: white">Recent Projects:</h1>
         <div class = "noblur" style = "display:flex; justify-content: center; align-items: center; flex-direction: row">
             <!-- Python Django SQL -->
-            <a href= "https://youtu.be/kzm-cP9y_Zg" class= "projects"><img class = "pop" alt="python" style = "width: 96%; height: auto;" src="http://img.youtube.com/vi/kzm-cP9y_Zg/0.jpg"/></a>
+            <a href= "https://youtu.be/kzm-cP9y_Zg" target="_blank" class= "projects"><img class = "pop" alt="python" style = "width: 96%; height: auto;" src="http://img.youtube.com/vi/kzm-cP9y_Zg/0.jpg"/></a>
             <!-- Javascript React Mongo -->
-            <a href= "https://youtu.be/rkZivRed6e0" class= "projects"><img class = "pop" alt= "mern" style = "width: 96%; height: auto;" src="http://img.youtube.com/vi/rkZivRed6e0/0.jpg"/></a>
+            <a href= "https://youtu.be/rkZivRed6e0" target="_blank" class= "projects"><img class = "pop" alt= "mern" style = "width: 96%; height: auto;" src="http://img.youtube.com/vi/rkZivRed6e0/0.jpg"/></a>
             <!-- C# ASP.Net SQL-->
-            <a href = "https://youtu.be/bLgBCtAwI0g" class= "projects"><img class = "pop" alt= "csharp" style = "width: 96%; height: auto;" src="http://img.youtube.com/vi/bLgBCtAwI0g/0.jpg"/></a>
+            <a href = "https://youtu.be/bLgBCtAwI0g" target="_blank" class= "projects"><img class = "pop" alt= "csharp" style = "width: 96%; height: auto;" src="http://img.youtube.com/vi/bLgBCtAwI0g/0.jpg"/></a>
             <!-- Coldfusion Tomcat SQL -->
-            <a href="https://youtu.be/ePFtissfYiQ" class= "projects"><img class = "pop" alt= "coldfusion" style = "width: 96%; height: auto;" src="http://img.youtube.com/vi/ePFtissfYiQ/0.jpg"/></a>
+            <a href="https://youtu.be/ePFtissfYiQ" target="_blank" class= "projects"><img class = "pop" alt= "coldfusion" style = "width: 96%; height: auto;" src="http://img.youtube.com/vi/ePFtissfYiQ/0.jpg"/></a>
             <div class="popwindow noblur"></div>
         </div>    
 
